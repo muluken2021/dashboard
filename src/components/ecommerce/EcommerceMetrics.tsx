@@ -1,81 +1,106 @@
 import {
   ArrowDownIcon,
   ArrowUpIcon,
-  BoxIconLine,
   GroupIcon,
+  BoxIconLine,
 } from "../../icons";
-import Badge from "../ui/badge/Badge";
+
+// Mocking icons based on your image
+const UserIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.61.02-.92.05 1.17.87 1.92 2.08 1.92 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+);
+
+const ChartIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+);
+
+const HistoryIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+);
 
 export default function EcommerceMetrics() {
+  const metrics = [
+    {
+      title: "Total User",
+      value: "40,689",
+      change: "8.5%",
+      isUp: true,
+      timeframe: "Up from yesterday",
+      icon: <UserIcon />,
+      variant: "purple" // Matching pastel colors from image
+    },
+    {
+      title: "Total Revenue",
+      value: "10,293",
+      change: "1.3%",
+      isUp: true,
+      timeframe: "Up from past week",
+      icon: <BoxIconLine />,
+      variant: "orange"
+    },
+    {
+      title: "Total Sales",
+      value: "$89,000",
+      change: "4.3%",
+      isUp: false,
+      timeframe: "Down from yesterday",
+      icon: <ChartIcon />,
+      variant: "green"
+    },
+    {
+      title: "Total Pending",
+      value: "2040",
+      change: "1.8%",
+      isUp: true,
+      timeframe: "Up from yesterday",
+      icon: <HistoryIcon />,
+      variant: "rose"
+    },
+  ];
+
+  const getVariantStyles = (variant: string) => {
+    switch (variant) {
+      case "purple": return "bg-[#E0E0F8] text-[#8280FD]";
+      case "orange": return "bg-[#FBEFDC] text-[#FFB038]";
+      case "green": return "bg-[#D9EADD] text-[#4AD991]";
+      case "rose": return "bg-[#F7D9D3] text-[#F39482]";
+      default: return "bg-gray-100 text-gray-600";
+    }
+  };
+
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6">
-      {/* <!-- Metric Item Start --> */}
-      <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
-        <div className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-xl dark:bg-gray-800">
-          <GroupIcon className="text-gray-800 size-6 dark:text-white/90" />
-        </div>
-
-        <div className="flex items-end justify-between mt-5">
-          <div>
-            <span className="text-sm text-gray-500 dark:text-gray-400">
-              Customers
-            </span>
-            <h4 className="mt-2 font-bold text-gray-800 text-title-sm dark:text-white/90">
-              3,782
-            </h4>
-          </div>
-          <Badge color="success">
-            <ArrowUpIcon />
-            11.01%
-          </Badge>
-        </div>
-      </div>
-      {/* <!-- Metric Item End --> */}
-
-      {/* <!-- Metric Item Start --> */}
-      <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
-        <div className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-xl dark:bg-gray-800">
-          <BoxIconLine className="text-gray-800 size-6 dark:text-white/90" />
-        </div>
-        <div className="flex items-end justify-between mt-5">
-          <div>
-            <span className="text-sm text-gray-500 dark:text-gray-400">
-              Orders
-            </span>
-            <h4 className="mt-2 font-bold text-gray-800 text-title-sm dark:text-white/90">
-              5,359
-            </h4>
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 md:gap-6">
+      {metrics.map((item, index) => (
+        <div 
+          key={index} 
+          className="rounded-3xl border border-gray-100 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-white/[0.03]"
+        >
+          <div className="flex items-start justify-between">
+            <div>
+              <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                {item.title}
+              </p>
+              <h4 className="mt-2 text-2xl font-bold text-gray-900 dark:text-white">
+                {item.value}
+              </h4>
+            </div>
+            
+            <div className={`flex h-14 w-14 items-center justify-center rounded-2xl ${getVariantStyles(item.variant)}`}>
+              {item.icon}
+            </div>
           </div>
 
-          <Badge color="error">
-            <ArrowDownIcon />
-            9.05%
-          </Badge>
-        </div>
-      </div>
-      {/* <!-- Metric Item End --> */}
-       {/* <!-- Metric Item Start --> */}
-      <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
-        <div className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-xl dark:bg-gray-800">
-          <BoxIconLine className="text-gray-800 size-6 dark:text-white/90" />
-        </div>
-        <div className="flex items-end justify-between mt-5">
-          <div>
+          <div className="mt-6 flex items-center gap-2">
+            <div className={`flex items-center gap-1 text-sm font-bold ${item.isUp ? 'text-[#00B69B]' : 'text-[#F93C65]'}`}>
+              {item.isUp ? <ArrowUpIcon className="size-4" /> : <ArrowDownIcon className="size-4" />}
+              {item.change}
+            </div>
             <span className="text-sm text-gray-500 dark:text-gray-400">
-              Revenue
+              {item.timeframe}
             </span>
-            <h4 className="mt-2 font-bold text-gray-800 text-title-sm dark:text-white/90">
-              $ 18,326
-            </h4>
           </div>
-
-          <Badge color="success">
-            <ArrowUpIcon />
-            10.05%
-          </Badge>
         </div>
-      </div>
-      {/* <!-- Metric Item End --> */}
+      ))}
     </div>
   );
 }
