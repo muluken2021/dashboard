@@ -203,7 +203,7 @@ export default function Products() {
            <div>
             <label className="block mb-2 text-sm font-medium">Description</label>
             <input 
-              type="text" placeholder="Description" required value={formData.name}
+              type="text" placeholder="Description" required value=""
               className="w-full rounded border border-gray-200 p-3 outline-none focus:border-brand-500 dark:border-gray-800 dark:bg-white/[0.03]"
               onChange={(e) => setFormData({...formData, name: e.target.value})}
             />
