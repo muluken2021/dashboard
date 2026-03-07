@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { EnvelopeIcon, EyeIcon } from "../../icons";
 
 
@@ -39,7 +39,7 @@ const customersData = [
 export default function Customers() {
   const [customers] = useState(customersData);
 
-  const getStatusBadge = (status) => {
+  const getStatusBadge = (status: string) => {
     switch (status) {
       case "VIP": return "bg-meta-3/10 text-meta-3"; // Greenish
       case "Regular": return "bg-primary/10 text-primary"; // Blue

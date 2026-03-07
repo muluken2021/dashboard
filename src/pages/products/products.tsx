@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from "react";
 import productsData from "../../data/products.json";
 import { PencilIcon, PlusIcon, TrashBinIcon } from "../../icons";
-import Badge from "../../components/ui/badge/Badge";
 import { Modal } from "../../components/ui/modal/index";
 
 export default function Products() {
@@ -19,7 +18,7 @@ export default function Products() {
     price: "",
     category: "Electronics",
     stock: "",
-    image: ""
+    image: "",
   };
   const [formData, setFormData] = useState(initialForm);
 

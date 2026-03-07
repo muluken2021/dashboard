@@ -3,19 +3,14 @@ import { Link, useLocation } from "react-router";
 
 // Assume these icons are imported from an icon library
 import {
-  BoxCubeIcon,
   BoxIcon,
-  BoxIconLine,
   CalenderIcon,
   ChevronDownIcon,
   DollarLineIcon,
   GridIcon,
   HorizontaLDots,
   ListIcon,
-  PageIcon,
   PieChartIcon,
-  PlugInIcon,
-  TableIcon,
   UserCircleIcon,
   UserIcon,
 } from "../icons";

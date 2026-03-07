@@ -1,5 +1,4 @@
-import React, { useState, useMemo } from "react";
-import PageMeta from "../../components/common/PageMeta";
+import { useState, useMemo } from "react";
 import { ArrowDownIcon, TrashBinIcon } from "../../icons";
 
 const initialTransactions = [

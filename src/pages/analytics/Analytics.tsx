@@ -1,9 +1,3 @@
-import React from "react";
-
-import BarChart from "../Charts/BarChart";
-import BarChartOne from "../../components/charts/bar/BarChartOne";
-import Backdrop from "../../layout/Backdrop";
-import LineChart from "../Charts/LineChart";
 import StatisticsChart from "../../components/ecommerce/StatisticsChart";
 import MonthlySalesChart from "../../components/ecommerce/MonthlySalesChart";
 import MonthlyTarget from "../../components/ecommerce/MonthlyTarget";

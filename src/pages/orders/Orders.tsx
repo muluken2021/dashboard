@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import ordersData from "../../data/orders.json";
 import { ArrowDownIcon, EyeIcon, TrashBinIcon } from "../../icons"; // Using EyeIcon for view
 import { Modal } from "../../components/ui/modal/index";

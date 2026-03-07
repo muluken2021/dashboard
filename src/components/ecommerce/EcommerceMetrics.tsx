@@ -1,7 +1,6 @@
 import {
   ArrowDownIcon,
   ArrowUpIcon,
-  GroupIcon,
   
 } from "../../icons";
 
