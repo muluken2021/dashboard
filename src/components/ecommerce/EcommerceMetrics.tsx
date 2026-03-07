@@ -2,20 +2,24 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
   GroupIcon,
-  BoxIconLine,
+  
 } from "../../icons";
 
 // Mocking icons based on your image
 const UserIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.61.02-.92.05 1.17.87 1.92 2.08 1.92 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+  <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.61.02-.92.05 1.17.87 1.92 2.08 1.92 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+);
+
+const BoxIconLine = () => (
+  <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.61.02-.92.05 1.17.87 1.92 2.08 1.92 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
 );
 
 const ChartIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
 );
 
 const HistoryIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
 );
 
 export default function EcommerceMetrics() {
@@ -58,15 +62,7 @@ export default function EcommerceMetrics() {
     },
   ];
 
-  const getVariantStyles = (variant: string) => {
-    switch (variant) {
-      case "purple": return "bg-[#E0E0F8] text-[#8280FD]";
-      case "orange": return "bg-[#FBEFDC] text-[#FFB038]";
-      case "green": return "bg-[#D9EADD] text-[#4AD991]";
-      case "rose": return "bg-[#F7D9D3] text-[#F39482]";
-      default: return "bg-gray-100 text-gray-600";
-    }
-  };
+ 
 
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 md:gap-6">
@@ -85,7 +81,7 @@ export default function EcommerceMetrics() {
               </h4>
             </div>
             
-            <div className={`flex h-14 w-14 items-center justify-center rounded-2xl ${getVariantStyles(item.variant)}`}>
+            <div className={`flex h-14 w-14 items-center justify-center rounded-2xl text-gray-700 dark:text-white`}>
               {item.icon}
             </div>
           </div>
